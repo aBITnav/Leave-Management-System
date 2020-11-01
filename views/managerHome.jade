@@ -1,0 +1,37 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        script(src="/javascripts/jquery.js")
+        script(src="/javascripts/manager.js")
+body(class="container panel panel-default")
+    nav(class="navbar navbar-default")
+        div(class="container-fluid")
+            ul(class="nav navbar-nav navbar-right")
+                li()
+                    a(href="/logout")
+                        span() Log Out
+    p Manager Login : #{name}
+
+    table(class='table table-bordered')
+        thead
+            tr
+                th Employee Name
+                th Start Date
+                th End Date
+                th Approve/Reject
+        tbody
+            each val in obj
+                tr
+                    td= val.employeeName
+                    td= val.startDate
+                    td= val.endDate
+                    td
+                        div()
+                            input(type='hidden',data-leaveId=val.leaveId,data-employeeEmail=val.employeeEmail)
+                            button(class='approve btn-success',value='Approve') Approve
+                            button(class='reject btn-danger',value='Reject') Reject
+                            div(class='hide',id='reasonBox')
+                                input(type='text',id='rejectReason',class='input-sm',val='')
+                                button(class="btn btn-default" id='rejectFinal',value='Reject') Submit
+

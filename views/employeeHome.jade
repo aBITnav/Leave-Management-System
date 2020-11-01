@@ -1,0 +1,49 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/jquery-ui.min.css', rel='stylesheet')
+        link(href='/stylesheets/jquery-ui.structure.min.css', rel='stylesheet')
+        link(href='/stylesheets/jquery-ui.theme.min.css', rel='stylesheet')
+        script(src="/javascripts/jquery.js")
+        script(src="/javascripts/jquery-ui.min.js")
+        script(src="/javascripts/employee.js")
+body(class="container panel panel-default")
+    nav(class="navbar navbar-default")
+        div(class="container-fluid")
+            ul(class="nav navbar-nav navbar-right")
+                li()
+                    a(href="/logout")
+                        span() Log Out
+    h1= title
+    p Employee Login : #{name}
+
+    div(class='container')
+        ul(class="nav nav-tabs")
+            li(class="active")
+                a(id='applyLeave') Apply Leave
+            li(class="active")
+                a(id='viewHistory') View Leave History
+
+    table(class='table table-bordered hide',id='table')
+        thead
+            tr
+                th Start Date
+                th End Date
+                th Status
+                th Reason
+        tbody
+            each val in obj
+                tr
+                    td= val.startDate
+                    td= val.endDate
+                    td= val.status
+                    td= val.reason
+
+    form(method='post',class='',id='form')
+        div(class="form-group")
+            label Start Date:
+            input(type="text", class="form-control", name='startDate', id='startDate', value="")
+        div(class="form-group")
+            label End Date:
+            input(type="text", class="form-control", name='endDate', id='endDate',value="")
+        button(type="submit",id="submit",class="btn btn-default") Submit

@@ -1,0 +1,27 @@
+{
+  "name": "leavemanagementsystem",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.3.5",
+    "debug": "^4.3.0",
+    "express": "^4.17.1",
+    "express-session": "^1.14.1",
+    "jade": "~1.11.0",
+    "mongoose": "^5.10.11",
+    "morgan": "^1.10.0",
+    "serve-favicon": "^2.5.0",
+    "simple-encryptor": "^1.1.0",
+    "uuid": "^2.0.3"
+  },
+  "description": "Leave Management System",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

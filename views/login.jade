@@ -1,0 +1,20 @@
+html
+  head
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+body(class="container")
+  h1= title
+
+  h2 Log In
+  form(method='post')
+    div(class="form-group")
+      label Email Address:
+      input(type="email", class="form-control", name='email', id='email',required)
+    div(class="form-group")
+      label Password:
+      input(type="password", class="form-control", name="password", id='password', required)
+    button(type="submit",class="btn btn-default") Submit
+
+  div(class="row")
+    a(href='/createEmployee') Create Employee
+  div(class="row")
+    a(href='/createManager') Create Manager
